@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anireekshithaa - The Unexpected | Psychological Thriller Short Film</title>
+    <meta name="description" content="Official promotion and ticketing site for Anireekshithaa, a psychological thriller short film. Watch the teaser, meet the crew, and book your premiere tickets.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styling -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Cinematic Overlay Particles/Glows -->
+    <div class="cinematic-background">
+        <div class="ambient-glow glow-red"></div>
+        <div class="ambient-glow glow-blue"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="logo">
+            <a href="#hero" class="cinzel-title">ANIREEKSHITHAA</a>
+        </div>
+        <nav class="nav-links">
+            <a href="#hero" class="nav-item active">Home</a>
+            <a href="#teaser" class="nav-item">Teaser</a>
+            <a href="#synopsis" class="nav-item">Synopsis</a>
+            <a href="#crew" class="nav-item">Creative Vision</a>
+            <a href="#feedback" class="nav-item">Review Corner</a>
+            <a href="#screening" class="nav-item">Premiere</a>
+            <a href="#booking-section" class="nav-btn">Book Tickets</a>
+        </nav>
+        <!-- Mobile Menu Trigger -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i class="fa-solid fa-xmark"></i></button>
+        <div class="mobile-nav-links">
+            <a href="#hero" class="mobile-nav-item">Home</a>
+            <a href="#teaser" class="mobile-nav-item">Teaser</a>
+            <a href="#synopsis" class="mobile-nav-item">Synopsis</a>
+            <a href="#crew" class="mobile-nav-item">Creative Vision</a>
+            <a href="#feedback" class="mobile-nav-item">Review Corner</a>
+            <a href="#screening" class="mobile-nav-item">Premiere</a>
+            <a href="#booking-section" class="mobile-nav-btn">Book Tickets</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section (Using dramatic char_glow.jpg as main backdrop) -->
+        <section id="hero" class="hero-section">
+            <div class="hero-backdrop" style="background-image: linear-gradient(to bottom, rgba(6, 6, 8, 0.4) 0%, rgba(6, 6, 8, 0.95) 100%), url('assets/char_glow.jpg');"></div>
+            <div class="hero-content">
+                <p class="hero-subtitle red-gradient-text animate-fade-in">AANTHARYA CREATIONS PRESENTS</p>
+                <h1 class="hero-title animate-slide-up">ANIREEKSHITHAA</h1>
+                <p class="hero-meta"><i class="fa-regular fa-clock"></i> 1 Hour | <i class="fa-solid fa-film"></i> Psychological Thriller | Kannada</p>
+                
+                <div class="hero-ctas animate-scale-up">
+                    <button class="btn-primary" onclick="openBookingModal()">
+                        <i class="fa-solid fa-ticket"></i> Book Premiere Tickets
+                    </button>
+                    <a href="#teaser" class="btn-secondary">
+                        <i class="fa-solid fa-play"></i> Watch Teaser
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="mouse-icon"><span class="mouse-wheel"></span></span>
+                <p>Scroll to Reveal</p>
+            </div>
+        </section>
+
+        <!-- Teaser Section (Using face close up photo as video thumbnail placeholder) -->
+        <section id="teaser" class="teaser-section">
+            <div class="section-container">
+                <span class="section-tag red-gradient-text">PREVIEW</span>
+                <h2 class="section-title text-glow">The Teaser</h2>
+                <div class="teaser-player-wrapper">
+                    <!-- Elegant Custom Cinematic Video Box -->
+                    <div class="video-container" id="videoContainer">
+                        <!-- Custom Poster/Thumb -->
+                        <div class="video-thumbnail" id="videoThumbnail">
+                            <img src="assets/char_face.jpg" alt="Teaser Preview Thumbnail">
+                            <div class="play-overlay">
+                                <span class="play-pulse"></span>
+                                <i class="fa-solid fa-play play-icon"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Frame -->
+                        <div class="video-player-frame" id="videoPlayerFrame" style="display: none;">
+                            <div class="custom-video-player">
+                                <video id="promoVideo" loop muted playsinline src="https://assets.mixkit.co/videos/preview/mixkit-dolly-shot-of-a-filmmaker-directing-a-scene-33989-large.mp4"></video>
+                                <div class="player-controls">
+                                    <button class="player-ctrl-btn" id="playPauseBtn"><i class="fa-solid fa-play"></i></button>
+                                    <div class="progress-bar-wrapper">
+                                        <div class="progress-bar" id="progressBar"></div>
+                                    </div>
+                                    <button class="player-ctrl-btn" id="muteBtn"><i class="fa-solid fa-volume-xmark"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Film Synopsis Section -->
+        <section id="synopsis" class="synopsis-section">
+            <div class="section-container">
+                <div class="synopsis-wrapper">
+                    <!-- Text Content -->
+                    <div class="synopsis-content">
+                        <span class="section-tag red-gradient-text" style="display: block; text-align: center;">THE STORY</span>
+                        <h2 class="section-title text-glow" style="text-align: center;">The Synopsis</h2>
+                        
+                        <div class="synopsis-paragraphs">
+                            <p class="lead-paragraph">
+                                <strong class="red-gradient-text font-cinzel">ANIREEKSHITHAA</strong> is a short film about the unexpected twists life throws at us. Moments that seem frustrating, suffocating, or unfair at first often reveal their true meaning with time.
+                            </p>
+                            <p>
+                                Through the journey of <strong>Tejas</strong>, the film explores how life's unplanned events shape us in ways we never anticipate. As he navigates a series of unforeseen situations, he gradually realizes that every setback, encounter, and coincidence has a purpose.
+                            </p>
+                            <p>
+                                In the end, Tejas comes to believe that life unfolds according to a greater design—that everything happens for a reason, and we are all simply players in a game guided by a higher force.
+                            </p>
+                            <div class="synopsis-highlight-box">
+                                <i class="fa-solid fa-compass highlight-icon"></i>
+                                <p>ANIREEKSHITHAA is a reflection on fate, faith, and the beauty hidden within life's uncertainties.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Bios Section (Star Cast & Creative Crew) -->
+        <section id="crew" class="crew-section">
+            <div class="section-container">
+                <span class="section-tag red-gradient-text">THE STAR CAST</span>
+                <h2 class="section-title">Meet the Cast</h2>
+                <p class="section-desc">The screen presence and talent that brought the characters of <strong>Anireekshithaa</strong> to life.</p>
+                               <div class="crew-grid">
+                    <!-- Crew Card: Lead Actor (Sharath Raj) -->
+                    <a href="https://www.instagram.com/sharathsharu_actor?igsh=bDFwZDJobWd0cHVn&utm_source=qr" target="_blank" class="crew-card" data-role="Cast" style="text-decoration: none; color: inherit;">
+                        <div class="crew-image-wrapper">
+                            <img src="assets/sharath_raj.jpg" alt="Sharath Raj" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
+                        </div>
+                        <div class="crew-info">
+                             <h3 class="crew-name">Sharath Raj <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
+                             <p class="crew-bio">I am a stage and film actor with experience in theatrical performances, short films, and feature films. I bring characters to life through thorough research, dedicated rehearsal, and deep character internalization, delivering authentic and compelling performances.</p>
+                        </div>
+                    </a>
+
+                    <!-- Crew Card: Sughosh Ram -->
+                    <a href="https://www.instagram.com/sughosharam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="crew-card" data-role="Cast" style="text-decoration: none; color: inherit;">
+                        <div class="crew-image-wrapper">
+                            <img src="assets/sughosh_ram.jpg" alt="Sughosh Ram" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
+                        </div>
+                        <div class="crew-info">
+                            <h3 class="crew-name">Sughosh Ram <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
+                            <p class="crew-bio">Sughosh Ram acts as the enigmatic pivot in the thriller, whose appearances shift the narrative trajectory in unexpected, suspenseful directions.</p>
+                        </div>
+                    </a>
+
+                    <!-- Crew Card: Swaroop -->
+                    <a href="https://www.instagram.com/naanu_swaroop_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="crew-card" data-role="Cast" style="text-decoration: none; color: inherit;">
+                        <div class="crew-image-wrapper">
+                            <img src="assets/swaroop.jpg" alt="Swaroop" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
+                        </div>
+                        <div class="crew-info">
+                            <h3 class="crew-name">Swaroop <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
+                            <p class="crew-bio">Swaroop delivers a powerful performance as Dev, Vikram's associate whose suspicious motives drive the suspense of the loop.</p>
+                        </div>
+                    </a>
+
+                    <!-- Crew Card: Swathi Gurudath -->
+                    <div class="crew-card" data-role="Cast">
+                        <div class="crew-image-wrapper">
+                            <img src="assets/swathi_gurudath.jpg" alt="Swathi Gurudath" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
+                        </div>
+                        <div class="crew-info">
+                            <h3 class="crew-name">Swathi Gurudath</h3>
+                            <p class="crew-bio">Swathi Gurudath is a prominent and versatile South Indian actress, known for her prolific work in both Kannada feature films and television serials. She is highly recognized for playing deeply impactful supporting and character roles, most notably portraying mother figures in Kannada cinema.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="crew-divider" style="margin: 60px 0; border-top: 1px solid var(--border-glass);"></div>
+
+                <span class="section-tag red-gradient-text" style="display: block; margin-top: 40px;">THE CREATIVE VISIONARIES</span>
+                <h2 class="section-title">Behind the Camera</h2>
+                <p class="section-desc">The key technical and creative crew shaping the tension and execution of <strong>Anireekshithaa</strong>.</p>
+
+                <div class="crew-grid">
+                    <!-- Crew Card: Director -->
+                    <a href="https://www.instagram.com/aadarsh_r_udupi/" target="_blank" class="crew-card" data-role="Director" style="text-decoration: none; color: inherit;">
+                        <div class="crew-image-wrapper">
+                            <img src="assets/director_adarsh.jpg" alt="Adarsh R Udupi">
+                            <div class="crew-role">Director & Writer</div>
+                        </div>
+                        <div class="crew-info">
+                             <h3 class="crew-name">Adarsh R Udupi <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
+                             <p class="crew-bio">I am a storyteller who finds cinema in the ordinary and meaning in the unexpected. For me, filmmaking is more than a craft—it's a way of capturing the moments that shape, challenge, and change us. Drawn to themes of love, destiny, human connection, and life's unpredictable turns, I strive to create stories that resonate emotionally and linger long after the screen fades to black.</p>
+                        </div>
+                    </a>
+
+                    <!-- Crew Card: Music Director -->
+                    <a href="https://www.instagram.com/symphonyaamps/?hl=en" target="_blank" class="crew-card" data-role="Music Director" style="text-decoration: none; color: inherit;">
+                        <div class="crew-image-wrapper">
+                            <img src="assets/music_shashikumar.jpg" alt="Shashikumar – SymphoNy Amps">
+                            <div class="crew-role">Music Director</div>
+                        </div>
+                        <div class="crew-info">
+                            <h3 class="crew-name">Shashikumar – SymphoNy Amps <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
+                            <p class="crew-bio" style="margin-bottom: 8px;">Creating music that inspires, moves and connects.</p>
+                            <ul style="list-style-type: disc; margin-left: 18px; margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
+                                <li>From composition to final mastering under one roof.</li>
+                                <li>Dedicated to quality, innovation and artistic excellence.</li>
+                                <li>Trusted partner for films, albums and commercial projects.</li>
+                                <li>Every note crafted with passion and precision.</li>
+                            </ul>
+                        </div>
+                    </a>
+
+                    <!-- Crew Card: DOP -->
+                    <a href="https://www.instagram.com/ajayarnold04/" target="_blank" class="crew-card" data-role="DOP" style="text-decoration: none; color: inherit;">
+                        <div class="crew-image-wrapper">
+                            <img src="assets/dop_ajay.jpg" alt="Ajay Keerthan">
+                            <div class="crew-role">DOP (Cinematography)</div>
+                        </div>
+                        <div class="crew-info">
+                            <h3 class="crew-name">Ajay Keerthan <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-left: 6px; color: var(--red); vertical-align: middle;"></i></h3>
+                            <p class="crew-bio" style="margin-bottom: 8px;">I'm Ajay Keerthan, a Bengaluru-based cinematographer with a passion for visual storytelling and cinematic imagery. I followed my love for cinema into the film industry, where I've been working as an assistant cinematographer for the past three years in 5 Feature films:</p>
+                            <ul style="list-style-type: disc; margin-left: 18px; margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
+                                <li>JC the University</li>
+                                <li>Kothalavaadi</li>
+                                <li>Alpha</li>
+                                <li>#Yesvee4 (Manoranjan Ravichandran as Lead)</li>
+                                <li>One independent film</li>
+                            </ul>
+                            <p class="crew-bio">I believe great work comes from curiosity, collaboration, and enjoying the process along the way.</p>
+                        </div>
+                    </a>
+ 
+                    <!-- Crew Card: Editor -->
+                    <div class="crew-card" data-role="Editor">
+                        <div class="crew-image-wrapper">
+                            <img src="assets/editor_ankith.jpg" alt="Ankith GV">
+                            <div class="crew-role">Editor</div>
+                        </div>
+                        <div class="crew-info">
+                            <h3 class="crew-name">Ankith GV</h3>
+                            <p class="crew-bio">I am an amateur video editor interested in the theory and practicality of visual storytelling. I run a small Instagram page called <a href="https://www.instagram.com/everyday.kannadiga/" target="_blank" style="color: var(--red-bright); text-decoration: none;">everyday.kannadiga</a> where I post edits, and have been part of short films in the post-production phases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audience Feedback Section (Review Corner) -->
+        <section id="feedback" class="feedback-section">
+            <div class="section-container">
+                <span class="section-tag red-gradient-text">AUDIENCE ECHO</span>
+                <h2 class="section-title text-glow">Review Corner</h2>
+                <p class="section-desc">Watched the premiere of <strong>Anireekshithaa</strong>? Share your cinematic experience with us via text or voice note.</p>
+
+                <div class="feedback-grid">
+                    <!-- Text Feedback Card -->
+                    <div class="feedback-card text-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-pen-nib header-icon"></i>
+                            <h3>Written Review</h3>
+                        </div>
+                        <form id="textReviewForm" onsubmit="event.preventDefault(); submitTextReview();">
+                            <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 20px;">
+                                <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                                    <label for="reviewName">Your Name <span class="required">*</span></label>
+                                    <input type="text" id="reviewName" placeholder="Enter name" required style="width: 100%;">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label>Rating <span class="required">*</span></label>
+                                    <div class="rating-picker" id="ratingPicker" style="display: flex; gap: 6px; padding: 10px 0;">
+                                        <i class="fa-regular fa-star star-btn" data-value="1" style="color: var(--text-dark); font-size: 1.25rem; cursor: pointer; transition: var(--transition-smooth);"></i>
+                                        <i class="fa-regular fa-star star-btn" data-value="2" style="color: var(--text-dark); font-size: 1.25rem; cursor: pointer; transition: var(--transition-smooth);"></i>
+                                        <i class="fa-regular fa-star star-btn" data-value="3" style="color: var(--text-dark); font-size: 1.25rem; cursor: pointer; transition: var(--transition-smooth);"></i>
+                                        <i class="fa-regular fa-star star-btn" data-value="4" style="color: var(--text-dark); font-size: 1.25rem; cursor: pointer; transition: var(--transition-smooth);"></i>
+                                        <i class="fa-regular fa-star star-btn" data-value="5" style="color: var(--text-dark); font-size: 1.25rem; cursor: pointer; transition: var(--transition-smooth);"></i>
+                                    </div>
+                                    <input type="hidden" id="reviewRatingInput" value="" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reviewText">Review Comments <span class="required">*</span></label>
+                                <textarea id="reviewText" placeholder="Write your thoughts about the story, acting, music, and cinematography..." rows="4" required style="width: 100%; resize: none;"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary btn-full">
+                                <i class="fa-solid fa-paper-plane"></i> Submit Written Review
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Voice Note Feedback Card -->
+                    <div class="feedback-card voice-card" style="text-align: center;">
+                        <div class="card-header" style="text-align: left;">
+                            <i class="fa-solid fa-microphone header-icon"></i>
+                            <h3>Voice Review</h3>
+                        </div>
+                        <div class="voice-recorder-wrapper" style="padding: 10px 0;">
+                            <p class="voice-instructions" id="voiceInstructions" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px;">Click the microphone button to start recording your feedback (Max 60s).</p>
+                            
+                            <!-- Visual Waveform representation -->
+                            <div class="waveform-container" id="waveformContainer" style="display: flex; justify-content: center; align-items: center; gap: 4px; height: 40px; margin-bottom: 20px;">
+                                <div class="wave-bar" style="width: 3px; height: 10px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
+                                <div class="wave-bar" style="width: 3px; height: 15px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
+                                <div class="wave-bar" style="width: 3px; height: 8px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
+                                <div class="wave-bar" style="width: 3px; height: 20px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
+                                <div class="wave-bar" style="width: 3px; height: 12px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
+                                <div class="wave-bar" style="width: 3px; height: 25px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
+                                <div class="wave-bar" style="width: 3px; height: 14px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
+                                <div class="wave-bar" style="width: 3px; height: 18px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
+                                <div class="wave-bar" style="width: 3px; height: 9px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
+                                <div class="wave-bar" style="width: 3px; height: 12px; background-color: var(--text-dark); border-radius: 2px; transition: height 0.15s ease;"></div>
+                            </div>
+
+                            <div class="timer-display" id="recordTimer" style="font-size: 1.8rem; font-weight: 700; color: var(--text-white); margin-bottom: 25px; font-family: monospace;">00:00</div>
+
+                            <div class="recorder-controls" style="margin-bottom: 20px; display: flex; justify-content: center; align-items: center; gap: 15px;">
+                                <button class="record-btn" id="recordBtn" aria-label="Record Voice Note" style="width: 70px; height: 70px; border-radius: 50%; background-color: #1a1b22; border: 1px solid var(--border-glass); color: var(--red-bright); font-size: 1.6rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition-smooth); box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+                                    <i class="fa-solid fa-microphone microphone-icon"></i>
+                                </button>
+                                <button class="btn-danger" id="stopRecordBtn" style="display: none; padding: 12px 20px; font-size: 0.9rem;" onclick="stopVoiceRecording()">
+                                    <i class="fa-solid fa-square"></i> Stop
+                                </button>
+                            </div>
+
+                            <!-- Recorded audio playback element (Hidden until recorded) -->
+                            <div class="playback-container" id="playbackContainer" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-glass);">
+                                <audio id="voicePlayback" controls style="width: 100%; margin-bottom: 20px; border-radius: 4px;"></audio>
+                                <div class="form-group" style="margin-top: 15px; text-align: left;">
+                                    <label for="voiceReviewName">Your Name <span class="required">*</span></label>
+                                    <input type="text" id="voiceReviewName" placeholder="Enter name" style="width: 100%;">
+                                </div>
+                                <div style="display: flex; gap: 10px;">
+                                    <button class="btn-secondary" style="flex: 1;" onclick="resetVoiceRecorder()">
+                                        <i class="fa-solid fa-rotate-left"></i> Re-record
+                                    </button>
+                                    <button class="btn-success" id="submitVoiceBtn" style="flex: 2;" onclick="submitVoiceReview()">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Submit Voice Review
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screening & Tickets Section -->
+        <section id="screening" class="screening-section">
+            <div class="section-container">
+                <div class="screening-box">
+                    <div class="screening-details">
+                        <span class="live-indicator"><span class="pulse-dot"></span> EXCLUSIVE PREMIERE</span>
+                        <h2 class="screening-title">Grand Screening</h2>
+                        
+                        <div class="detail-rows">
+                            <div class="detail-row">
+                                <div class="detail-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                                <div class="detail-txt">
+                                    <h4>Date & Time</h4>
+                                    <p>Saturday, July 4th, 2026 | 5:00 PM onwards</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="detail-txt">
+                                    <h4>Screening Location</h4>
+                                    <p>Chamundeshwari Studios, 48/3, Millers Tank Bund Rd, Vasanth Nagar, Bengaluru - 560052</p>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                                <div class="detail-txt">
+                                    <h4>Ticket Price</h4>
+                                    <p>₹99 per seat</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Simulation -->
+                    <div class="map-simulation">
+                        <div class="map-header">
+                            <i class="fa-solid fa-map-location-dot"></i> Venue Map
+                        </div>
+                        <div class="map-frame">
+                            <div class="venue-marker">
+                                <i class="fa-solid fa-location-pin venue-pin"></i>
+                                <span class="venue-tooltip">Chamundeshwari Studios</span>
+                            </div>
+                        </div>
+                        <a href="https://share.google/vwN112VVFGlLNPvOU" target="_blank" class="map-link-btn">
+                            <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Highlight booking section right here -->
+                <div class="booking-cta-block" id="booking-section">
+                    <h3>Secure Your Presence</h3>
+                    <p>Limited seats available. Book now to get your instant WhatsApp confirmation.</p>
+                    <button class="btn-primary btn-large" onclick="openBookingModal()">
+                        <i class="fa-solid fa-chair"></i> Book Tickets Now
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="cinzel-title">ANIREEKSHITHAA</span>
+                <p>&copy; 2026 Aantharya Creations. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#teaser">Teaser</a>
+                <a href="#synopsis">Synopsis</a>
+                <a href="#crew">Crew</a>
+                <a href="#feedback">Review Corner</a>
+                <!-- Subtle Admin Trigger -->
+                <button class="admin-trigger-btn" onclick="promptAdminAccess()">
+                    <i class="fa-solid fa-lock"></i> Organizer Panel
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="modal lightbox-modal">
+        <span class="modal-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content-wrapper">
+            <img class="lightbox-img" id="lightboxImg">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- TICKET BOOKING MODAL (WIZARD) -->
+    <div id="bookingModal" class="modal wizard-modal">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeBookingModal()">&times;</button>
+            
+            <!-- Wizard Steps Indicator -->
+            <div class="wizard-steps">
+                <div class="step-indicator active" id="stepIndicator1">1. Tickets</div>
+                <div class="step-indicator" id="stepIndicator2">2. Details</div>
+                <div class="step-indicator" id="stepIndicator3">3. Payment</div>
+            </div>
+
+            <!-- STEP 1: Seat Selection / Quantity -->
+            <div class="wizard-step-panel active" id="stepPanel1">
+                <h3 class="panel-title">Choose Number of Seats</h3>
+                <p class="panel-subtitle">Select how many tickets you wish to purchase.</p>
+                
+                <div class="ticket-picker-wrapper">
+                    <button class="qty-btn" onclick="adjustTickets(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <span class="qty-display" id="ticketQty">1</span>
+                    <button class="qty-btn" onclick="adjustTickets(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+
+                <div class="booking-summary-box">
+                    <div class="summary-row">
+                        <span>Price per Ticket</span>
+                        <span>₹99.00</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Grand Total</span>
+                        <span class="red-gradient-text" id="summaryTotal">₹99.00</span>
+                    </div>
+                </div>
+
+                <div class="wizard-nav-btns">
+                    <span></span> <!-- Spacer -->
+                    <button class="btn-primary" onclick="goToStep(2)">
+                        Continue <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Audience Details -->
+            <div class="wizard-step-panel" id="stepPanel2">
+                <h3 class="panel-title">Audience Information</h3>
+                <p class="panel-subtitle">Please enter your details to receive your booking confirmation receipt.</p>
+                
+                <form id="bookingForm" onsubmit="event.preventDefault(); submitDetailsForm();">
+                    <div class="form-group">
+                        <label for="bookingName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="bookingName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingPhone">WhatsApp Mobile Number <span class="required">*</span></label>
+                        <div class="input-phone-container">
+                            <span class="phone-prefix">+91</span>
+                            <input type="tel" id="bookingPhone" placeholder="Enter 10-digit number" pattern="[6789][0-9]{9}" required>
+                        </div>
+                        <small class="form-help">Enter a valid 10-digit Indian mobile number.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingEmail">Email Address <span class="text-muted" style="font-size: 0.8rem; font-weight: normal; opacity: 0.7;">(Optional)</span></label>
+                        <input type="email" id="bookingEmail" placeholder="Enter your email address">
+                    </div>
+
+                    <div class="wizard-nav-btns">
+                        <button type="button" class="btn-secondary" onclick="goToStep(1)">
+                            <i class="fa-solid fa-arrow-left"></i> Back
+                        </button>
+                        <button type="submit" class="btn-primary">
+                            Proceed to Pay <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- STEP 3: Review Booking & Pay -->
+            <div class="wizard-step-panel" id="stepPanel3" style="position: relative;">
+                <h3 class="panel-title">Review Booking</h3>
+                <p class="panel-subtitle">Verify your show details and proceed to secure payment gateway.</p>
+                
+                <div class="booking-review-container" style="margin-top: 20px; display: flex; flex-direction: column; gap: 15px;">
+                    <!-- Movie Details Card -->
+                    <div class="review-details-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: 8px; padding: 20px; text-align: left;">
+                        <span style="font-size: 0.75rem; background: var(--red); color: var(--text-white); padding: 2px 8px; border-radius: 4px; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">Premiere Screening</span>
+                        <h4 style="color: var(--text-white); font-size: 1.35rem; margin-top: 8px; margin-bottom: 6px; font-family: 'Outfit', sans-serif; font-weight: 700; letter-spacing: 0.5px;">ANIREEKSHITHAA</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;"><i class="fa-solid fa-film" style="margin-right: 6px; color: var(--red-bright);"></i> Kannada &bull; Suspense Thriller</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; font-size: 0.85rem; color: var(--text-light);">
+                            <div>
+                                <small style="display: block; color: var(--text-muted); margin-bottom: 4px; font-weight: 600; letter-spacing: 0.5px;">DATE & TIME</small>
+                                <strong style="color: var(--text-white);">Sat, July 4, 2026 at 5:00 PM</strong>
+                            </div>
+                            <div>
+                                <small style="display: block; color: var(--text-muted); margin-bottom: 4px; font-weight: 600; letter-spacing: 0.5px;">VENUE</small>
+                                <strong style="color: var(--text-white);">Chamundeshwari Studios</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Details Card -->
+                    <div class="review-payment-card" style="background: #0b0c10; border: 1px solid var(--border-glass); border-radius: 8px; padding: 20px; text-align: left; display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-light);">
+                            <span>Ticket Summary (<span id="summaryReviewQty">1 Seat</span>)</span>
+                            <strong id="summaryReviewSubtotal" style="color: var(--text-white);">₹99.00</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-muted); border-bottom: 1px dashed rgba(255,255,255,0.08); padding-bottom: 12px;">
+                            <span>Internet Handling Fee</span>
+                            <span style="color: #2ecc71; font-weight: bold;">FREE</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 5px;">
+                            <span style="font-size: 1rem; color: var(--text-white); font-weight: 600;">Amount Payable</span>
+                            <strong style="font-size: 1.40rem; color: var(--red-bright); font-family: 'Outfit', sans-serif; text-shadow: 0 0 10px rgba(217,35,42,0.2);" id="summaryReviewTotal">₹99.00</strong>
+                        </div>
+                    </div>
+
+                    <!-- Customer Info Details -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.8rem; color: var(--text-muted); text-align: left; background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 12px; border-radius: 6px;">
+                        <div>Name: <strong style="color: var(--text-light);" id="reviewCustomerName">-</strong></div>
+                        <div>Phone: <strong style="color: var(--text-light);" id="reviewCustomerPhone">-</strong></div>
+                    </div>
+
+                    <!-- Pay Now Button -->
+                    <button type="button" class="btn-primary" onclick="startRazorpayPayment()" style="width: 100%; padding: 14px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(217, 35, 42, 0.3); background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%); color: var(--text-white); border-radius: 6px; cursor: pointer; transition: all 0.2s ease; margin-top: 5px; font-size: 1.05rem; box-shadow: 0 4px 15px rgba(217, 35, 42, 0.35);">
+                        <i class="fa-solid fa-lock" style="font-size: 0.95rem;"></i> Pay Now &bull; <span id="payNowBtnAmount">₹99.00</span>
+                    </button>
+                    
+                    <!-- Trust badges -->
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 5px; opacity: 0.5; font-size: 0.75rem; color: var(--text-muted);">
+                        <span><i class="fa-solid fa-shield-halved"></i> Secure Checkout</span>
+                        <span>&bull;</span>
+                        <span>Powered by Razorpay</span>
+                    </div>
+                </div>
+
+                <div class="wizard-nav-btns" style="margin-top: 20px;">
+                    <button class="btn-secondary" onclick="goToStep(2)">
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                    </button>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- STEP 4: Success & Confirmation -->
+            <div class="wizard-step-panel" id="stepPanel4">
+                <div class="success-header">
+                    <div class="success-icon" id="successIcon"><i class="fa-solid fa-clock" style="color: #f1c40f;"></i></div>
+                    <h3 id="successTitle">Verification Pending</h3>
+                    <p id="successDesc">Your booking has been submitted for payment verification.</p>
+                </div>
+
+                <!-- Dynamic Ticket Preview -->
+                <div class="ticket-preview-card" id="ticketCard">
+                    <div class="ticket-header" style="position: relative;">
+                        <h4>ANIREEKSHITHAA PREMIERE</h4>
+                        <span class="ticket-badge" id="ticketBadge" style="background-color: #f1c40f; color: #111;">PENDING</span>
+                    </div>
+                    <div class="ticket-body">
+                        <div class="ticket-row">
+                            <div>
+                                <small>Attendee</small>
+                                <strong id="ticketName">Sharath Kumar</strong>
+                            </div>
+                            <div>
+                                <small>Booking ID</small>
+                                <strong id="ticketId">ANR-9842-X</strong>
+                            </div>
+                        </div>
+                        <div class="ticket-row">
+                            <div>
+                                <small>Seats</small>
+                                <strong id="ticketCount">2 Tickets</strong>
+                            </div>
+                            <div>
+                                <small>Venue</small>
+                                <strong>Chamundeshwari Studios</strong>
+                            </div>
+                        </div>
+                        <div class="ticket-row">
+                            <div>
+                                <small>Date</small>
+                                <strong>July 4, 2026</strong>
+                            </div>
+                            <div>
+                                <small>Time</small>
+                                <strong>5:00 PM</strong>
+                            </div>
+                        </div>
+                        <div class="ticket-row" style="border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 8px; margin-top: 8px;">
+                            <div>
+                                <small>Amount Paid</small>
+                                <strong id="ticketAmountPaid">₹99.00</strong>
+                            </div>
+                            <div>
+                                <small>Payment Status</small>
+                                <strong style="color: #2ecc71;">PAID &bull; SECURE</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-barcode">
+                            <div class="stripe"></div>
+                            <div class="stripe tall"></div>
+                            <div class="stripe"></div>
+                            <div class="stripe wide"></div>
+                            <div class="stripe"></div>
+                            <div class="stripe tall"></div>
+                            <div class="stripe"></div>
+                        </div>
+                        <span class="ticket-brand">Aantharya Creations</span>
+                    </div>
+                </div>
+
+                <!-- Attendee Info Box (Replaces WhatsApp direct trigger button) -->
+                <div class="action-confirmation-box" style="text-align: center; margin-top: 25px;">
+                    <div class="pending-info-box" id="successInfoBox" style="background-color: rgba(241, 196, 15, 0.05); border: 1px solid rgba(241, 196, 15, 0.2); border-radius: 8px; padding: 15px; margin-bottom: 20px; font-size: 0.9rem; line-height: 1.5; color: var(--text-light); text-align: left;">
+                        <i class="fa-solid fa-circle-info" id="successInfoIcon" style="color: #f1c40f; margin-bottom: 8px; display: block; font-size: 1.25rem;"></i>
+                        <span id="successInfoText">Once organizer <strong>Adarsh R Udupi</strong> receives and verifies the payment on their UPI account (9986048332@ybl), your ticket confirmation will be sent directly to your provided WhatsApp number.</span>
+                    </div>
+                    <div style="display: flex; gap: 12px; margin-top: 15px; width: 100%;">
+                        <button class="btn-primary" onclick="downloadPDFTicket()" style="flex: 1; padding: 13px 20px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.95rem; font-weight: 600; border-radius: 6px; border: 1px solid var(--border-red); cursor: pointer;">
+                            <i class="fa-solid fa-file-pdf"></i> Download Ticket PDF
+                        </button>
+                        <button class="btn-secondary" onclick="closeBookingModal()" style="flex: 1; padding: 13px 20px; font-size: 0.95rem; font-weight: 600; border-radius: 6px; border: 1px solid var(--border-glass); cursor: pointer; background: transparent; color: var(--text-white);">Close Window</button>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Simulation Overlay -->
+                <div class="mock-whatsapp-popup" id="mockWhatsappPopup" style="display: none;">
+                    <div class="wa-popup-header">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>WhatsApp Confirmation Simulation</span>
+                        <button onclick="closeWhatsappPopup()">&times;</button>
+                    </div>
+                    <div class="wa-popup-body">
+                        <div class="wa-message sent">
+                            <p id="waMessageText">Hi Sharath, your booking for ANIREEKSHITHAA is confirmed! Ticket ID: ANR-9842-X. Show: Saturday, July 4th, 2026, 5:00 PM onwards at Chamundeshwari Studios.</p>
+                            <span class="wa-time">Just now <i class="fa-solid fa-check-double"></i></span>
+                        </div>
+                    </div>
+                    <div class="wa-popup-footer">
+                        <small>A real WhatsApp API redirect was launched in your browser tab!</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECRET ADMIN PASSCODE DIALOG -->
+    <div id="adminPasscodeModal" class="modal simple-modal">
+        <div class="modal-content small-content">
+            <button class="modal-close-btn" onclick="closeAdminPasscode()">&times;</button>
+            <h3>Organizer Authentication</h3>
+            <p class="modal-subtitle">Enter key to access the audience directory.</p>
+            <div class="form-group">
+                <input type="password" id="adminPasskey" placeholder="Enter password (admin123)">
+                <p class="error-text" id="adminPasskeyError" style="display: none;">Invalid Passkey. Please try again.</p>
+            </div>
+            <button class="btn-primary btn-full" onclick="submitAdminPasskey()">Access Panel</button>
+        </div>
+    </div>
+
+    <!-- ADMIN DASHBOARD MODAL -->
+    <div id="adminDashboardModal" class="modal full-modal">
+        <div class="modal-content large-content">
+            <div class="admin-header">
+                <div class="admin-title-area">
+                    <h2><i class="fa-solid fa-gauge-high"></i> Anireekshithaa - Organizer Dashboard</h2>
+                    <p>Real-time booking intelligence and audience demographic metrics.</p>
+                </div>
+                <div class="admin-action-area">
+                    <button class="btn-secondary" onclick="exportDatabaseToCSV()">
+                        <i class="fa-solid fa-file-csv"></i> Export CSV
+                    </button>
+                    <button class="btn-danger" onclick="confirmResetDatabase()">
+                        <i class="fa-solid fa-trash-can"></i> Reset DB
+                    </button>
+                    <button class="modal-close-btn-admin" onclick="closeAdminDashboard()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="admin-stats-row">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-receipt"></i></div>
+                    <div class="stat-data">
+                        <span class="stat-label">Total Bookings</span>
+                        <h3 id="statTotalBookings">0</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-couch"></i></div>
+                    <div class="stat-data">
+                        <span class="stat-label">Tickets Sold</span>
+                        <h3 id="statTicketsSold">0</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                    <div class="stat-data">
+                        <span class="stat-label">Total Revenue</span>
+                        <h3 id="statTotalRevenue">₹0</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-clapperboard"></i></div>
+                    <div class="stat-data">
+                        <span class="stat-label">Filmmakers</span>
+                        <h3 id="statFilmmakers">0</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Navigation Tabs -->
+            <div class="admin-tabs-nav" style="display: flex; gap: 15px; margin-bottom: 25px; border-bottom: 1px solid var(--border-glass); padding-bottom: 15px;">
+                <button class="btn-tab active" id="tabBookingsBtn" onclick="switchAdminTab('bookings')" style="background: transparent; border: none; color: var(--text-white); border-bottom: 2px solid var(--red); padding: 8px 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; font-family: inherit;"><i class="fa-solid fa-couch"></i> Bookings Directory</button>
+                <button class="btn-tab" id="tabReviewsBtn" onclick="switchAdminTab('reviews')" style="background: transparent; border: none; color: var(--text-dark); padding: 8px 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; font-family: inherit;"><i class="fa-solid fa-comments"></i> Audience Reviews</button>
+            </div>
+
+            <!-- Directory Table Area -->
+            <div class="admin-table-section" id="bookingsTabContent">
+                <div class="table-controls">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="adminSearch" placeholder="Search by name, phone or ID..." onkeyup="filterAdminTable()">
+                    </div>
+                    <div class="filter-dropdown-wrapper">
+                        <i class="fa-solid fa-filter"></i>
+                        <select id="adminFilterStatus" onchange="filterAdminTable()">
+                            <option value="all">All Statuses</option>
+                            <option value="SUCCESSFUL">Confirmed (Paid)</option>
+                            <option value="PENDING">Pending Verification</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="admin-table" id="adminBookingsTable">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Tickets</th>
+                                <th>Paid</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminTableBody">
+                        </tbody>
+                    </table>
+                    <div class="no-data-alert" id="noDataAlert" style="display: none;">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <p>No attendee records match the search parameters.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Table Area (Hidden by Default) -->
+            <div class="admin-table-section" id="reviewsTabContent" style="display: none;">
+                <div class="table-controls">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="adminReviewSearch" placeholder="Search reviews by name..." onkeyup="filterReviewsTable()">
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="admin-table" id="adminReviewsTable">
+                        <thead>
+                            <tr>
+                                <th>Attendee Name</th>
+                                <th>Type</th>
+                                <th>Rating</th>
+                                <th>Review / Audio Playback</th>
+                                <th>Date Submitted</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminReviewsTableBody">
+                            <!-- Dynamic Review Rows -->
+                        </tbody>
+                    </table>
+                    <div class="no-data-alert" id="noReviewsDataAlert" style="display: none;">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <p>No feedback entries found.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

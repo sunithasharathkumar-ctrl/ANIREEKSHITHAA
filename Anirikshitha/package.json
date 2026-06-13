@@ -1,0 +1,12 @@
+{
+  "name": "anireekshithaa-promotion",
+  "version": "1.0.0",
+  "description": "Cinematic promotional and ticketing website for Anireekshithaa short film",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y http-server . -p 3000 -c-1"
+  },
+  "keywords": [],
+  "author": "Aantharya Creations",
+  "license": "ISC"
+}
